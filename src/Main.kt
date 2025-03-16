@@ -245,17 +245,17 @@ fun emptyCount(cageList: List<String>): Int {
  * Tip: the String.padEnd(N) function will help you here
  */
 fun showMonkeyCages(cageList: List<String>) {
-   println("+--------------+".repeat(cageList.size))
+   println("+--------".repeat(cageList.size))
    for (i in 0..cageList.size - 1) {
-       println("| Cage ${i + 1}".padEnd(9))
+       print("| Cage ${i + 1}".padEnd(9))
    }
     println("|")
-    println("+--------------+".repeat(cageList.size))
+    println("+--------".repeat(cageList.size))
     for (i in 0..cageList.size - 1) {
-        println("| ${cageList[i]}".padEnd(9))
+        print("| ${cageList[i]}".padEnd(9))
 }
     println("|")
-    println("+--------------+".repeat(cageList.size))
+    println("+--------".repeat(cageList.size))
 }
 
 
@@ -276,7 +276,9 @@ fun clearCage(cageList: MutableList<String>, cageNum: Int) {
  */
 fun swapCages(cageList: MutableList<String>, cageNum1: Int, cageNum2: Int) {
     println("<-> Swapping cages $cageNum1 and $cageNum2")
-    val swap = cagelist
+    val swap = cageList[cageNum1 - 1]
+    cageList[cageNum1 - 1] = cageList[cageNum2 - 1]
+    cageList[cageNum2 - 1] = swap
 }
 
 
